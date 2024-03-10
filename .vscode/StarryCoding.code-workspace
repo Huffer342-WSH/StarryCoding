@@ -26,7 +26,7 @@
 					"-g",
 					"${file}",
 					"-o",
-					"${fileDirname}\\build\\a.exe"
+					"${workspaceFolder}\\build\\a.exe"
 				],
 				"options": {
 					"cwd": "${fileDirname}"
@@ -35,21 +35,14 @@
 					"$gcc"
 				],
 				"group": "build",
-				"detail": "compiler: \"D:\\SDK\\w64devkit\\bin\\g++.exe\""
+				"detail": "编译当前文件"
 			},
 			{
 				"type": "shell",
 				"label": "C/C++: g++.exe build&run active file",
-				"command": "${fileDirname}\\build\\a.exe",
-				"args": [],
-				"options": {
-					"cwd": "${fileDirname}"
-				},
-				"problemMatcher": [
-					"$gcc"
-				],
+				"command": "${workspaceFolder}\\build\\a.exe",
 				"presentation": {
-					"echo": false,
+					"echo": true,
 					"reveal": "always",
 					"focus": true,
 					"panel": "dedicated",
@@ -63,12 +56,14 @@
 				"group": {
 					"kind": "build",
 					"isDefault": true
-				}
+				},
+				"detail": "编译并运行当前文件"
 			},
 			{
 				"type": "shell",
 				"label": "Run",
-				"command": "${fileDirname}\\build\\a.exe",
+				"command": "${workspaceFolder}\\build\\a.exe",
+				"detail": "运行"
 			}
 		]
 	}
