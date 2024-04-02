@@ -11,7 +11,8 @@
 			"*.veo": "verilog",
 			"*.h": "c",
 			"*.ymal": "yaml",
-			"iostream": "cpp"
+			"iostream": "cpp",
+			"ostream": "cpp"
 		}
 	},
 	"tasks": {
@@ -19,7 +20,7 @@
 		"tasks": [
 			{
 				"type": "cppbuild",
-				"label": "C/C++: g++.exe build active file",
+				"label": "g++ build",
 				"command": "g++.exe",
 				"args": [
 					"-fdiagnostics-color=always",
@@ -39,7 +40,7 @@
 			},
 			{
 				"type": "shell",
-				"label": "C/C++: g++.exe build&run active file",
+				"label": "g++ build&run",
 				"command": "${workspaceFolder}\\build\\a.exe",
 				"presentation": {
 					"echo": true,
@@ -50,7 +51,7 @@
 					"clear": true
 				},
 				"dependsOn": [
-					"C/C++: g++.exe build active file"
+					"g++ build"
 				],
 				"dependsOrder": "sequence",
 				"group": {
@@ -61,10 +62,44 @@
 			},
 			{
 				"type": "shell",
-				"label": "Run",
+				"label": "run",
 				"command": "${workspaceFolder}\\build\\a.exe",
-				"detail": "运行"
+				"detail": "run",
+				"presentation": {
+					"echo": true,
+					"reveal": "always",
+					"focus": true,
+					"panel": "dedicated",
+					"showReuseMessage": true,
+					"clear": true
+				},
 			}
 		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "C++ Launch",
+				"type": "cppdbg",
+				"request": "launch",
+				"program": "${workspaceFolder}/build/a.exe", // 替换为你的可执行文件路径
+				"args": [], // 可选：如果需要传递参数给程序，则在此处指定
+				"stopAtEntry": true,
+				"cwd": "${workspaceFolder}",
+				"environment": [],
+				"externalConsole": false,
+				"MIMode": "gdb",
+				"setupCommands": [
+					{
+						"description": "Enable pretty-printing for gdb",
+						"text": "-enable-pretty-printing",
+						"ignoreFailures": true
+					}
+				],
+				"preLaunchTask": "C++ 编译" // 替换为你的构建任务名称，如果有
+			}
+		],
+		"compounds": []
 	}
 }
