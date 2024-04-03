@@ -21,13 +21,13 @@
 			{
 				"type": "cppbuild",
 				"label": "g++ build",
-				"command": "g++.exe",
+				"command": "g++",
 				"args": [
 					"-fdiagnostics-color=always",
 					"-g",
 					"${file}",
 					"-o",
-					"${workspaceFolder}\\build\\a.exe"
+					"${workspaceFolder}/build/a.exe"
 				],
 				"options": {
 					"cwd": "${fileDirname}"
@@ -41,7 +41,7 @@
 			{
 				"type": "shell",
 				"label": "g++ build&run",
-				"command": "${workspaceFolder}\\build\\a.exe",
+				"command": "${workspaceFolder}/build/a.exe",
 				"presentation": {
 					"echo": true,
 					"reveal": "always",
@@ -63,7 +63,7 @@
 			{
 				"type": "shell",
 				"label": "run",
-				"command": "${workspaceFolder}\\build\\a.exe",
+				"command": "${workspaceFolder}/build/a.exe",
 				"detail": "run",
 				"presentation": {
 					"echo": true,
@@ -97,7 +97,7 @@
 						"ignoreFailures": true
 					}
 				],
-				"preLaunchTask": "C++ 编译" // 替换为你的构建任务名称，如果有
+				"preLaunchTask": "g++ build" // 替换为你的构建任务名称，如果有
 			}
 		],
 		"compounds": []
