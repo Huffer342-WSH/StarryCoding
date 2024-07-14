@@ -29,7 +29,7 @@ void printC()
 	// }
 	// printf("\n\n");
 }
-void add(int k, int v)
+void rangeAdd(int k, int v)
 {
 	while (k <= n) {
 		c[k] += v;
@@ -63,7 +63,7 @@ int main(int argc, char const *argv[])
 		if (opt == 1) {
 			int k, v;
 			cin >> k >> v;
-			add(k, v);
+			rangeAdd(k, v);
 		} else {
 			int l, r;
 			cin >> l >> r;
